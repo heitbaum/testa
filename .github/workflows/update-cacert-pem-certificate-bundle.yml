@@ -17,6 +17,9 @@ jobs:
       CERTDATA_PATH: security/nss/lib/ckfw/builtins/certdata.txt
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.LIBREELECBOT_GITHUB_TOKEN }}
+          repository: drinkx/testa
 
       - name: Get sha and canonical download url for latest version of certdata.txt file
         id: latest_certdata
