@@ -56,7 +56,7 @@ jobs:
       - name: Get SHA of the branch that triggered the workflow run
         id: head_branch
         run: |
-          sha=$(git rev-parse ${{ github.ref }})
+          sha=$(git rev-parse refs/heads/dev)
           echo "::set-output name=sha::${sha}"
 
       - name: Create Pull Request
